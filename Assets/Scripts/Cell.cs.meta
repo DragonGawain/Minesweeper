@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3986083f23b374d45a8644242b7b28e2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tile0: {fileID: -1990523248, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile1: {fileID: 1272383578, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile2: {fileID: 2008652499, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile3: {fileID: 1823570254, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile4: {fileID: 654878810, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile5: {fileID: 368396825, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile6: {fileID: 811095007, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile7: {fileID: 1311221885, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tile8: {fileID: -1327467761, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tileClosed: {fileID: -1830905154, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tileFlagged: {fileID: -1686187696, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  - tileMine: {fileID: -1275837891, guid: 1ad3bac4b42941c4c9a40cd16112af6b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
