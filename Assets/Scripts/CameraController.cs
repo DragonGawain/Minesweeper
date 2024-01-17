@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float Yspeed = Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime;
-        float Xspeed = Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime;
+        float Yspeed = Input.GetAxisRaw("Vertical") * 1;
+        float Xspeed = Input.GetAxisRaw("Horizontal") * 1;
         float Zspeed = Input.mouseScrollDelta.y * 1;
 
         transform.position = new Vector3(

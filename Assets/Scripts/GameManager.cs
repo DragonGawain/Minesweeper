@@ -89,6 +89,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+            
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 noZ = new Vector3(pos.x, pos.y);
         Vector3Int mouseCell = grid.WorldToCell(noZ);
