@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public static GameState gameState = GameState.MENU;
     public static int cellsRemaining = 9;
     public static bool requestRefresh = false;
+    bool firstClick = true;
 
     public void StartNewGame()
     {
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
         );
         tilemap.RefreshAllTiles();
         gameState = GameState.MENU;
+        firstClick = true;
         mineTarget = (int)minesSlider.value;
         if (mineTarget >= (width.value * height.value) - 15)
             mineTarget = (int)(width.value * height.value) - 15;
@@ -103,19 +105,24 @@ public class GameManager : MonoBehaviour
                 {
                     if (Input.GetMouseButtonUp(0))
                     {
-                        Cell cell = (Cell)tilemap.GetTile(mouseCell);
-                        cell.setCellState(CellState.OPENED);
-                        // tilemap.RefreshTile(mouseCell);
-                        Cell tempCell;
-                        for (int i = 0; i < 8; i++)
+                        if (firstClick)
+                            firstClick = false;
+                        else
                         {
-                            tempCell = GetNeighbor(i, mouseCell, tilemap.GetComponent<Tilemap>());
-                            if (tempCell != null && tempCell.getCellState() == CellState.CLOSED)
+                            Cell cell = (Cell)tilemap.GetTile(mouseCell);
+                            cell.setCellState(CellState.OPENED);
+                            // tilemap.RefreshTile(mouseCell);
+                            Cell tempCell;
+                            for (int i = 0; i < 8; i++)
                             {
-                                tempCell.setCellState(CellState.OPENED);
+                                tempCell = GetNeighbor(i, mouseCell, tilemap.GetComponent<Tilemap>());
+                                if (tempCell != null && tempCell.getCellState() == CellState.CLOSED)
+                                {
+                                    tempCell.setCellState(CellState.OPENED);
+                                }
                             }
+                            gameState = GameState.STARTUP;
                         }
-                        gameState = GameState.STARTUP;
                     }
                 }
                 break;
