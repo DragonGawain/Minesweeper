@@ -12,7 +12,8 @@ public enum CellState
     CLOSED,
     FLAGGGED,
     UPDATED,
-    DEAD
+    DEAD,
+    WRONG
 };
 
 [CreateAssetMenu]
@@ -27,6 +28,7 @@ public class Cell : TileBase
     Sprite tileFlagged;
     Sprite tileMine;
     Sprite tileRedMine;
+    Sprite tileXMine;
     Sprite tile0;
     Sprite tile1;
     Sprite tile2;
@@ -71,6 +73,7 @@ public class Cell : TileBase
                 tile8 = png;
         }
         tileRedMine = Resources.Load<Sprite>("Sprites/RedMine");
+        tileXMine = Resources.Load<Sprite>("Sprites/XMine");
 
         return true;
     }
@@ -205,6 +208,8 @@ public class Cell : TileBase
             tileData.sprite = tileFlagged;
         else if (cellState == CellState.DEAD)
             tileData.sprite = tileRedMine;
+        else if (cellState == CellState.WRONG)
+            tileData.sprite = tileXMine;
         else
             tileData.sprite = cellSprite;
 

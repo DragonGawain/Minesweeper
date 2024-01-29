@@ -235,6 +235,11 @@ public class GameManager : MonoBehaviour
                             cell.setCellState(CellState.OPENED);
                             tilemap.RefreshTile(cellLoc);
                         }
+                        else if(cell.getCellValue() != -1 && cell.getCellState() == CellState.FLAGGGED)
+                        {
+                            cell.setCellState(CellState.WRONG);
+                            tilemap.RefreshTile(cellLoc);
+                        }
                     }
                 }
                 break;
